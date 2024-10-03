@@ -1,0 +1,6 @@
+version: "0.0.1"
+description: WS2812 C++ driver
+url: https://github.com/timreddy/esp-WS2812-cpp
+dependencies:
+  idf: ">=5.0"
+  cmake_utilities: "0.*"
