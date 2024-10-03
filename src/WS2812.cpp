@@ -10,6 +10,7 @@ static const char* TAG = "WS2812";
 
 /**
  * @brief Construct a new WS2812::WS2812 object
+ * using by default pin 8 for power and pin 5 for rmt
  * 
  */
 WS2812::WS2812() {
