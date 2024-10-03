@@ -22,8 +22,8 @@ WS2812::WS2812() {
 /**
  * @brief Construct a new WS2812::WS2812 object
  * 
- * @param power_pin 
- * @param tx_pin 
+ * @param power_pin the GPIO pin providing power to the LED 
+ * @param tx_pin ths GPIO pin used for RMT transmissions
  */
 WS2812::WS2812(gpio_num_t power_pin, gpio_num_t tx_pin) {
     this->power_pin = power_pin;
