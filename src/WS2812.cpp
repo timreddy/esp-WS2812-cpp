@@ -32,7 +32,8 @@ WS2812::WS2812(gpio_num_t power_pin, gpio_num_t tx_pin) {
 }
 
 /**
- * @brief  Initialize the gpio pins and the rmt channel
+ * @brief  Initialize the gpio pins and the rmt channel. Uses a static
+ * callback encoder to write to the RMT channel
  * 
  */
 void WS2812::init(void) {
