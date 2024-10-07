@@ -40,6 +40,11 @@ void WS2812::init(void) {
     ESP_ERROR_CHECK(gpio_reset_pin(this->power_pin));
     ESP_ERROR_CHECK(gpio_set_direction(this->power_pin,GPIO_MODE_OUTPUT));
 
+    //starting color 
+    this->r = 0;
+    this->g = 0;
+    this->b = 0;
+
     //start turned off
     this->off();
     
@@ -65,6 +70,9 @@ void WS2812::init(void) {
 
 void WS2812::on(void) {
     ESP_ERROR_CHECK(gpio_set_level(this->power_pin,1));
+
+    //need to re-set the color after powering off
+    this->set_rgb(this->r, this->g, this->b);
 }
 
 void WS2812::off(void) {
@@ -80,6 +88,9 @@ void WS2812::off(void) {
  * @return esp_err_t 
  */
 esp_err_t WS2812::set_rgb(uint8_t r, uint8_t g, uint8_t b) {
+    this->r = r;
+    this->g = g;
+    this->b = b;
 
     uint8_t payload[3] = {g, r, b};
 

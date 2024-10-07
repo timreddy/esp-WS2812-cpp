@@ -19,6 +19,8 @@ class WS2812 {
         gpio_num_t power_pin;
         gpio_num_t tx_pin;
 
+        uint8_t r, g, b;
+
         constexpr static rmt_symbol_word_t zero  = {T0H_TICKS,1,T0L_TICKS,0}; // { .duration0, .level0, .duration1, .level1 }
         constexpr static rmt_symbol_word_t one   = {T1H_TICKS,1,T1L_TICKS,0};
         constexpr static rmt_symbol_word_t reset = {RESET_TICKS,0,0,0};
